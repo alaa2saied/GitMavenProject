@@ -12,23 +12,25 @@ public class RegisterTest {
     Register page = new Register();
     @Given("Open URL")
     public void precondition(){
-        page.clickOnLogin();
+        page.loginButton.click();
     }
 
 
-    @When("Enter valid data in name as {string} and email {string}")
+    @When("Enter valid data in {string} and {string}")
     public void enterValidDataInEmailAsAndPassword(String name, String email) {
-        page.enterEmail(name,email);
-
+        page.nameInput.sendKeys(name);
+        page.emailInput.sendKeys(email);
     }
 
     @And("Click on register button")
     public void clickOnRegisterButton() {
-        page.clickOnSignUpButton();
+        page.signUpButton.click();
     }
 
     @Then("User can navigate to register page")
     public void userCanNavigateToRegisterPage() {
         Assert.assertEquals(Hocks.driver.getCurrentUrl(),"https://www.automationexercise.com/signup");
     }
+
+
 }
