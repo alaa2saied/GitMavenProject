@@ -3,6 +3,7 @@ package Tests;
 import Pages.HomePage;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,7 +25,7 @@ public class HomeTest extends BaseTest{
     Faker faker ;
 
     @Test
-    public void searchFunction(){
+    public void searchFunction() throws InterruptedException {
         //create object from home page
         page  = new HomePage(driver);
         actions = new Actions(driver);
@@ -72,7 +73,45 @@ public class HomeTest extends BaseTest{
         page.enterPassword(faker.internet().password(8,15,true,true,true));
         //Click on sign up button
         page.clickOnSignUpButton();
-        page.clickOnSignUpButton();
+        //click on Entry level position
+        page.clickOnEntryLevel();
+        //click on full time job
+        page.clickOnFullTime();
+        //click on remote job
+        page.clickOnRemote();
+        //Enter field of job that required
+        page.clickOnElectricalEngineer();
+        //Enter expected salary
+        page.enterExpectedSalary("10000");
+        //continue process
+        page.clickOnSaveAndContinue();
+        //Enter date of birth
+        page.chooseDate();
+        //Select female
+        page.chooseFemale();
+        //Enter Location
+        page.selectLocation();
+        //wait till invisibility of overlap
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("css-m16exc")));
+        //Enter phone number
+        page.enterPhoneNumber("01544354547");
+        //click on save
+        page.clickOnSaveButton();
+        //enter experience year
+        page.setYearsExperience();
+        //scroll down
+        Thread.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,700)");
+        //Enter study field and university
+        page.enterStudyInformation("Electrical","Helwan");
+        //Enter languages
+        page.editLanguage();
+        //Enter skills of job that searched about it
+        page.enterSkills("Software testing");
+        page.enterSkills2("Embedded System");
+        //Enter get started to apply for job
+        page.clickOnGetStarted();
         soft.assertAll();
 
 

@@ -31,6 +31,7 @@ public class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.clear();
         element.sendKeys(text);
+
     }
     public WebElement forAssert(By locator){
         wait = new WebDriverWait(driver,Duration.ofSeconds(10));
