@@ -40,6 +40,7 @@ public class HomeTest extends BaseTest {
         test.pass("Open page of  Zamzam website");
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         //close tab of facebook
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("css-m16exc")));
         driver.switchTo().window(tabs.get(1));
         driver.close();
         driver.switchTo().window(tabs.get(0));
@@ -49,6 +50,7 @@ public class HomeTest extends BaseTest {
         test.pass("Twitter icon open Zamzam page in twitter");
         tabs= new ArrayList<>(driver.getWindowHandles());
         //close tab of twitter
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("css-m16exc")));
         driver.switchTo().window(tabs.get(1));
         driver.close();
         driver.switchTo().window(tabs.get(0));
@@ -58,6 +60,7 @@ public class HomeTest extends BaseTest {
         test.pass("LinkedIn icon open Zamzam page in twitter");
         tabs= new ArrayList<>(driver.getWindowHandles());
         //close tab of LinkedIn
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("css-m16exc")));
         driver.switchTo().window(tabs.get(1));
         driver.close();
         driver.switchTo().window(tabs.get(0));
@@ -67,6 +70,7 @@ public class HomeTest extends BaseTest {
         test.pass("Youtube icon open Zamzam page in twitter");
         tabs= new ArrayList<>(driver.getWindowHandles());
         //close tab of Youtube
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("css-m16exc")));
         driver.switchTo().window(tabs.get(1));
         driver.close();
         driver.switchTo().window(tabs.get(0));
@@ -76,6 +80,7 @@ public class HomeTest extends BaseTest {
         test.pass("Instagram icon open Zamzam page in twitter");
         tabs= new ArrayList<>(driver.getWindowHandles());
         //close tab of Instagram
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("css-m16exc")));
         driver.switchTo().window(tabs.get(1));
         driver.close();
         driver.switchTo().window(tabs.get(0));
