@@ -66,14 +66,16 @@ public class Search {
     public void setFiveStarsAndMaximumPrice() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(page.slider1));
         Thread.sleep(2000);
-        action.dragAndDropBy(page.slider1, -189,0);
+        action.dragAndDropBy(page.slider1, -180,0);
         action.perform();
         page.fiveStars.click();
     }
 
     @Then("Number of hotels shown in search page")
     public void numberOfHotelsShownInSearchPage() {
+        wait = new WebDriverWait(Hocks.driver,Duration.ofSeconds(10));
         for (int i=0 ;i<page.hotels.size();i++){
+            wait.until(ExpectedConditions.visibilityOf(page.prices.get(i)));
             System.out.println(page.hotels.get(i).getText()+"\t"+page.prices.get(i).getText());
         }
 

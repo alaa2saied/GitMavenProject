@@ -1,4 +1,5 @@
 Feature: User search
+  @happy
   Scenario: Verify that user can search about hotels
     Given Open URL
     When Enter country that searched hotels in " Barcelona"
